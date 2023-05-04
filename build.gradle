@@ -1,0 +1,33 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.11'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.h2database:h2:2.1.214'
+	implementation 'commons-io:commons-io:2.11.0'
+	//implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	//implementation 'com.tosan.client.http:tosan-httpclient-spring-boot-root:2.0.2'
+	//implementation 'com.tosan.client.http:tosan-httpclient-spring-boot-core:2.0.2'
+	//implementation 'com.tosan.client.http:tosan-httpclient-spring-boot-starter:2.0.2'
+	//implementation 'com.tosan.client.http:tosan-httpclient-spring-boot-resttemplate-starter:2.0.2'
+	//implementation 'ga.rugal:feign-client-generator:1.0.0'
+	//implementation 'org.springframework.boot:spring-boot-starter-security'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
